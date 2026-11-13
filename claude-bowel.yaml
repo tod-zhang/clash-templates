@@ -29,8 +29,8 @@ payload:
   - IP-ASN,399358,no-resolve
 
   # 兜底规则（geosite + keyword 通配）
-  - geosite:anthropic
-  - keyword:datadog
-  - keyword:sentry
-  - keyword:sift
-  - geosite:category-ntp
+  - GEOSITE,anthropic
+  - DOMAIN-KEYWORD,datadog
+  - DOMAIN-KEYWORD,sentry
+  - DOMAIN-KEYWORD,sift
+  - GEOSITE,category-ntp
