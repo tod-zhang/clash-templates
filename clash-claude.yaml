@@ -60,27 +60,24 @@ dns:
 proxies: null
 
 proxy-groups:
-- name: ✴️ Claude
+- name: Claude
   type: select
-  icon: https://raw.githubusercontent.com/lobehub/lobe-icons/f349c583d09108e5c5e6ed5d1c7e1ffe8069bb3b/packages/static-png/dark/claude-color.png
   include-all: true
   proxies:
-  - 🚀 手动选择
-  - ♻️ 自动选择
-  - 🎯 全球直连
+  - 手动选择
+  - 自动选择
+  - 全球直连
   - __PROXY_PROVIDERS__
   - __PROXY_NODES__
-- name: 🚀 手动选择
+- name: 手动选择
   type: select
-  icon: https://raw.githubusercontent.com/Hawaiine/Oasisic-Icons/main/icons/System/Proxy/Proxy.png
   include-all: true
   proxies:
-  - ♻️ 自动选择
+  - 自动选择
   - __PROXY_PROVIDERS__
   - __PROXY_NODES__
-- name: ♻️ 自动选择
+- name: 自动选择
   type: url-test
-  icon: https://raw.githubusercontent.com/Hawaiine/Oasisic-Icons/main/icons/System/Auto/Auto.png
   include-all: true
   proxies:
   - __PROXY_PROVIDERS__
@@ -88,51 +85,49 @@ proxy-groups:
   url: https://cp.cloudflare.com/generate_204
   interval: 300
   tolerance: 50
-- name: 🐟 漏网之鱼
+- name: 漏网之鱼
   type: select
-  icon: https://raw.githubusercontent.com/Hawaiine/Oasisic-Icons/main/icons/System/Final/Final.png
   include-all: true
   proxies:
-  - 🚀 手动选择
-  - ♻️ 自动选择
-  - 🎯 全球直连
+  - 手动选择
+  - 自动选择
+  - 全球直连
   - __PROXY_PROVIDERS__
   - __PROXY_NODES__
-- name: 🎯 全球直连
+- name: 全球直连
   type: select
-  icon: https://raw.githubusercontent.com/Hawaiine/Oasisic-Icons/main/icons/System/Direct/Direct.png
   proxies:
   - DIRECT
   - REJECT
 
 rules:
-- DOMAIN-SUFFIX,anthropic.com,✴️ Claude
-- DOMAIN-SUFFIX,claude.ai,✴️ Claude
-- DOMAIN-SUFFIX,claude.com,✴️ Claude
-- DOMAIN-SUFFIX,clau.de,✴️ Claude
-- DOMAIN-SUFFIX,claudemcpclient.com,✴️ Claude
-- DOMAIN-SUFFIX,claudemcpcontent.com,✴️ Claude
-- DOMAIN-SUFFIX,claudeusercontent.com,✴️ Claude
-- DOMAIN,servd-anthropic-website.b-cdn.net,✴️ Claude
-- DOMAIN,anthropic.com.cdn.cloudflare.net,✴️ Claude
-- DOMAIN,anthropic.auth0.com,✴️ Claude
-- DOMAIN,anthropic-com.ghost.io,✴️ Claude
-- DOMAIN-SUFFIX,sentry.io,✴️ Claude
-- DOMAIN-SUFFIX,statsigapi.net,✴️ Claude
-- DOMAIN,browser-intake-us5-datadoghq.com,✴️ Claude
-- DOMAIN-KEYWORD,datadog,✴️ Claude
-- DOMAIN-KEYWORD,sentry,✴️ Claude
-- DOMAIN-KEYWORD,sift,✴️ Claude
-- DOMAIN-SUFFIX,intercom.io,✴️ Claude
-- DOMAIN-SUFFIX,intercomcdn.com,✴️ Claude
-- DOMAIN,cdn.usefathom.com,✴️ Claude
-- GEOSITE,anthropic,✴️ Claude
-- GEOSITE,category-ntp,✴️ Claude
-- IP-CIDR,160.79.104.0/21,✴️ Claude,no-resolve
-- IP-CIDR6,2607:6bc0::/32,✴️ Claude,no-resolve
-- IP-ASN,399358,✴️ Claude,no-resolve
-- GEOSITE,private,🎯 全球直连
-- GEOIP,private,🎯 全球直连,no-resolve
-- GEOSITE,cn,🎯 全球直连
-- GEOIP,cn,🎯 全球直连,no-resolve
-- MATCH,🐟 漏网之鱼
+- DOMAIN-SUFFIX,anthropic.com,Claude
+- DOMAIN-SUFFIX,claude.ai,Claude
+- DOMAIN-SUFFIX,claude.com,Claude
+- DOMAIN-SUFFIX,clau.de,Claude
+- DOMAIN-SUFFIX,claudemcpclient.com,Claude
+- DOMAIN-SUFFIX,claudemcpcontent.com,Claude
+- DOMAIN-SUFFIX,claudeusercontent.com,Claude
+- DOMAIN,servd-anthropic-website.b-cdn.net,Claude
+- DOMAIN,anthropic.com.cdn.cloudflare.net,Claude
+- DOMAIN,anthropic.auth0.com,Claude
+- DOMAIN,anthropic-com.ghost.io,Claude
+- DOMAIN-SUFFIX,sentry.io,Claude
+- DOMAIN-SUFFIX,statsigapi.net,Claude
+- DOMAIN,browser-intake-us5-datadoghq.com,Claude
+- DOMAIN-KEYWORD,datadog,Claude
+- DOMAIN-KEYWORD,sentry,Claude
+- DOMAIN-KEYWORD,sift,Claude
+- DOMAIN-SUFFIX,intercom.io,Claude
+- DOMAIN-SUFFIX,intercomcdn.com,Claude
+- DOMAIN,cdn.usefathom.com,Claude
+- GEOSITE,anthropic,Claude
+- GEOSITE,category-ntp,Claude
+- IP-CIDR,160.79.104.0/21,Claude,no-resolve
+- IP-CIDR6,2607:6bc0::/32,Claude,no-resolve
+- IP-ASN,399358,Claude,no-resolve
+- GEOSITE,private,全球直连
+- GEOIP,private,全球直连,no-resolve
+- GEOSITE,cn,全球直连
+- GEOIP,cn,全球直连,no-resolve
+- MATCH,漏网之鱼
