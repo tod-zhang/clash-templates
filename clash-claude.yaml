@@ -64,34 +64,12 @@ proxy-groups:
   type: select
   include-all: true
   proxies:
-  - 手动选择
-  - 自动选择
-  - 全球直连
   - __PROXY_PROVIDERS__
   - __PROXY_NODES__
-- name: 手动选择
-  type: select
-  include-all: true
-  proxies:
-  - 自动选择
-  - __PROXY_PROVIDERS__
-  - __PROXY_NODES__
-- name: 自动选择
-  type: url-test
-  include-all: true
-  proxies:
-  - __PROXY_PROVIDERS__
-  - __PROXY_NODES__
-  url: https://cp.cloudflare.com/generate_204
-  interval: 300
-  tolerance: 50
 - name: 漏网之鱼
   type: select
   include-all: true
   proxies:
-  - 手动选择
-  - 自动选择
-  - 全球直连
   - __PROXY_PROVIDERS__
   - __PROXY_NODES__
 - name: 全球直连
