@@ -24,3 +24,17 @@ payload:
   - GEOSITE,anthropic
   - DOMAIN-KEYWORD,sentry
   - GEOSITE,category-ntp
+
+  # macOS 程序规则。主配置使用 behavior: classical 和 find-process-mode: strict，
+  # 并将这个 RULE-SET 放在可能优先匹配的直连或兜底规则前。
+  # Claude Desktop、Chromium Helpers（含 GPU、Plugin、Renderer）、ShipIt
+  - PROCESS-PATH,/Applications/Claude.app/Contents/MacOS/Claude
+  - 'PROCESS-PATH-REGEX,^/Applications/Claude\.app/Contents/Frameworks/Claude Helper( \([^/]+\))?\.app/Contents/MacOS/Claude Helper( \([^/]+\))?$'
+  - PROCESS-PATH,/Applications/Claude.app/Contents/Frameworks/Squirrel.framework/Versions/A/Resources/ShipIt
+  # 桌面版内置 Claude Code 的版本和内部目录会随更新变化。
+  - 'PROCESS-PATH-REGEX,^/Users/[^/]+/Library/Application Support/Claude/claude-code/(.*/)?claude(\.exe)?$'
+  # npm / pnpm 的启动入口和解析符号链接后的原生二进制。
+  - 'PROCESS-PATH-REGEX,^/Users/[^/]+/\.npm-global/bin/claude$'
+  - 'PROCESS-PATH-REGEX,^/.*/node_modules/@anthropic-ai/claude-code(-darwin-(arm64|x64))?/(bin/)?claude(\.exe)?$'
+  # VS Code 插件内置 Claude Code，兼容插件版本变化。
+  - 'PROCESS-PATH-REGEX,^/Users/[^/]+/\.vscode/extensions/anthropic\.claude-code-[0-9][^/]*/resources/native-binary/claude(\.exe)?$'
